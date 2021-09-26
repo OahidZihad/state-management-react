@@ -19,7 +19,9 @@ const allProducts = [
 
 const Categories = () => {
   const [category] = useContext(CategoryContext);
+
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
     console.log({ category });
     const matchedProducts = allProducts.filter(
@@ -27,6 +29,7 @@ const Categories = () => {
     );
     setProducts(matchedProducts);
   }, [category]);
+
   return (
     <div>
       <h2>Select Your Categories: {category}</h2>
